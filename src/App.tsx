@@ -10,7 +10,7 @@ function App() {
     {name: 'Поесть', id: 't2', completed: false},
     {name: 'Погулять', id: 't3', completed: false},
   ])
-  const [currentTask, setCurrentTask] = useState('Выпить чай !');
+  const [currentTask, setCurrentTask] = useState('');
   const [count, setCount] = useState(4);
 
   const addTask = () => {
@@ -23,6 +23,7 @@ function App() {
     copyAry.push(addTask);
     setTask(copyAry)
     setCount(count + 1);
+    setCurrentTask('');
   }
 
 
