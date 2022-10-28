@@ -58,7 +58,7 @@ function App() {
 
   return (
     <div className="App">
-      <AddTaskForm name={currentTask} onNameChange={event => setCurrentTask(event.target.value)} add={addTask} />
+      <AddTaskForm name={currentTask} onNameChange={event => setCurrentTask(event.target.value)} add={e => {e.preventDefault(); addTask()}} />
       {task.map((name, index) => (
         <Task addClass={addClass(name.id)} name={name.name} key={name.id} remove={() => removeTask(name.id)} completed={() => toCompleted(name.id)}/>
       ))}
